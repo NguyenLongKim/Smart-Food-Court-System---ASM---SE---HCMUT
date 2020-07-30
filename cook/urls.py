@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from .views import ViewOrdersList, ChangeOrderStatus
 
 
 app_name = 'cook'
