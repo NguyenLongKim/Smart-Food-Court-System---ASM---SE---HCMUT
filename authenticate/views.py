@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from model.models.cart import Cart
 from django.http import HttpResponse
 
 # Create your views here.
@@ -19,6 +18,5 @@ def PostLogin(request):
         return HttpResponse('Login failed')
 
 def LogOut(request):
-    Cart.objects.get(customer=request.user.customer).delete()
     logout(request)
     return redirect('authenticate:get_login')
